@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="librarymanagment.HomeController">
+
+    <!-- Top Bar -->
+    <top>
+        <HBox spacing="20" style="-fx-background-color: #2C3E50;" alignment="CENTER_LEFT">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+            <Label text="Library Management System" textFill="WHITE">
+                <font>
+                    <Font name="Arial Bold" size="20" />
+                </font>
+            </Label>
+
+            <!-- Dynamic Welcome Message Label -->
+            <Label fx:id="welcomeLabel" text="Welcome!" textFill="WHITE" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+
+            <!-- Logout Button -->
+            <Button fx:id="btnLogout" text="Logout" onAction="#handleLogout"
+                    style="-fx-background-color: #E74C3C; -fx-text-fill: white;" visible="false" />
+        </HBox>
+    </top>
+
+    <!-- Side Menu -->
+    <left>
+        <VBox spacing="10" style="-fx-background-color: #34495E;">
+            <padding>
+                <Insets bottom="15" left="15" right="15" top="15" />
+            </padding>
+            <Button fx:id="btnDashboard" prefWidth="150" text="Dashboard" />
+            <Button fx:id="btnBooks" onAction="#hanldemanagebooks" prefWidth="150" text="Manage Books" />
+            <Button fx:id="btnMembers" onAction="#handlemanagemembers" prefWidth="150" text="Manage Members" />
+            <Button fx:id="btnIssue" onAction="#handleissuebooks" prefWidth="150" text="Issue Book" />
+            <Button fx:id="btnReturn" onAction="#handlereturnbook" prefWidth="150" text="Return Book" />
+        </VBox>
+    </left>
+
+    <!-- Main Content Area -->
+    <center>
+        <StackPane>
+            <padding>
+                <Insets bottom="20" left="20" right="20" top="20" />
+            </padding>
+            <VBox alignment="CENTER" spacing="15">
+                <Label text="Welcome to the Library Management System">
+                    <font>
+                        <Font name="Arial" size="18" />
+                    </font>
+                </Label>
+                <Label text="Use the menu on the left to navigate through the system." />
+                <HBox alignment="CENTER" spacing="10">
+                    <Button fx:id="btnLogin" onAction="#handlelogin" prefWidth="100" text="Login" />
+                    <Button fx:id="btnSignUp" onAction="#handlesignup" prefWidth="100" text="Sign Up" />
+                </HBox>
+            </VBox>
+        </StackPane>
+    </center>
+
+</BorderPane>

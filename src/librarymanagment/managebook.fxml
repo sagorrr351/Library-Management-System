@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="10.0" style="-fx-background-color: #2C3E50;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="librarymanagment.ManagebookController">
+    
+    <padding>
+        <Insets bottom="15" left="15" right="15" top="15" />
+    </padding>
+
+    <!-- Title -->
+    <Label style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Manage Books" textFill="#f4ecec" />
+
+    <!-- Form Inputs -->
+    <GridPane hgap="10" vgap="10">
+        <columnConstraints>
+            <ColumnConstraints halignment="RIGHT" />
+            <ColumnConstraints hgrow="ALWAYS" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints valignment="CENTER" />
+            <RowConstraints valignment="CENTER" />
+            <RowConstraints valignment="CENTER" />
+            <RowConstraints valignment="CENTER" />
+            <RowConstraints valignment="CENTER" />
+        </rowConstraints>
+
+        <Label text="Book ID:" textFill="#f8f2f2" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <TextField fx:id="bookIdField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        
+        <Label text="Title:" textFill="#f4f1f1" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <TextField fx:id="titleField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+        <Label text="Author:" textFill="#fdfafa" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <TextField fx:id="authorField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+        <Label text="Year:" textFill="#ebe3e3" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <TextField fx:id="yearField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+        <Label text="Quantity:" textFill="#f6f6f6" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+        <TextField fx:id="quantityField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+    </GridPane>
+
+    <!-- Buttons -->
+    <HBox spacing="10">
+        <Button onAction="#handleAddBook" text="Add Book" />
+        <Button onAction="#handleUpdateBook" text="Update Book" />
+        <Button onAction="#handleDeleteBook" text="Delete Book" />
+        <Button onAction="#handleClearFields" text="Clear Fields" />
+    </HBox>
+
+    <!-- Book Table -->
+    <TableView fx:id="bookTable" prefHeight="300" prefWidth="600">
+        <columns>
+            <TableColumn fx:id="colBookId" prefWidth="100" text="Book ID" />
+            <TableColumn fx:id="colTitle" prefWidth="150" text="Title" />
+            <TableColumn fx:id="colAuthor" prefWidth="150" text="Author" />
+            <TableColumn fx:id="colYear" prefWidth="80" text="Year" />
+            <TableColumn fx:id="colQuantity" prefWidth="100" text="Quantity" />
+        </columns>
+    </TableView>
+</VBox>
